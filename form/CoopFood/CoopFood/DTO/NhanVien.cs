@@ -22,6 +22,7 @@ namespace CoopFood.DTO
         public string Email { get; set; }
         public string SDT { get; set; }
         public DateTime NgayVaoLam { get; set; }
+        public decimal MucLuong { get; set; }
         public int MaCV { get; set; }
     }
 }

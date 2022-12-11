@@ -24,6 +24,7 @@ CREATE TABLE NHANVIEN
 	Email Varchar(200) NOT NULL,
 	SDT Varchar(20) NOT NULL,
 	NgayVaoLam Datetime NOT NULL,
+	MucLuong Money NOT NULL,
 	MaCV Int NOT NULL
 ----------Khóa ngoại----------
 	FOREIGN KEY(MaCV) REFERENCES dbo.CHUCVU(MaCV)
@@ -153,23 +154,23 @@ INSERT INTO CHUCVU (MaCV, TenCV, Luong) VALUES (105, N'Bán hàng-kho', 6000000)
 INSERT INTO CHUCVU (MaCV, TenCV, Luong) VALUES (106, N'Bán hàng-chế biến thực phẩm tươi sống', 6000000);
 
 						----------2.Bảng NHÂN VIÊN----------
-INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MaCV)
-VALUES (201, N'Nguyễn Đăng An Ninh', N'Nam', '1989/12/20', N'Bình Dương', 272869013, 'ninhlord@gmail.com', 0322558811, '2017/01/01', 101);
+INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MucLuong, MaCV)
+VALUES (201, N'Nguyễn Đăng An Ninh', N'Nam', '1989/12/20', N'Bình Dương', 272869013, 'ninhlord@gmail.com', 0322558811, '2017/01/01', 15000000, 101);
 
-INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MaCV)
-VALUES (202, N'Nguyễn Phạm Thành Hưng', N'Nữ', '1989/05/23', N'Tp.Hồ Chí Minh', 272849014, 'hungless@gmail.com', 0311224455, '2017/02/01', 102);
+INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MucLuong, MaCV)
+VALUES (202, N'Nguyễn Phạm Thành Hưng', N'Nữ', '1989/05/23', N'Tp.Hồ Chí Minh', 272849014, 'hungless@gmail.com', 0311224455, '2017/02/01', 16000000, 102);
 
-INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MaCV)
-VALUES (203, N'Phan Thị Kim Nhung', N'Nữ', '2001/06/26', N'Đồng Nai', 272859033, 'nhungbaoden@gmail.com', 0339861477, '2019/01/01', 103);
+INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MucLuong, MaCV)
+VALUES (203, N'Phan Thị Kim Nhung', N'Nữ', '2001/06/26', N'Đồng Nai', 272859033, 'nhungbaoden@gmail.com', 0339861477, '2019/01/01', 17000000, 103);
 
-INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MaCV)
-VALUES (204, N'Kiều Thị Mộng Hiền', N'Nữ', '2002/12/28', N'Phú Yên', 272899067, 'hienga@gmail.com', 0322866772, '2019/01/01', 104);
+INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MucLuong, MaCV)
+VALUES (204, N'Kiều Thị Mộng Hiền', N'Nữ', '2002/12/28', N'Phú Yên', 272899067, 'hienga@gmail.com', 0322866772, '2019/01/01', 18000000, 104);
 
-INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MaCV)
-VALUES (205, N'Trần Tấn Quốc', N'Nam', '1995/05/05', N'Hà Nội', 272815935, 'quocque@gmail.com', 0388774455, '2020/05/01', 105);
+INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MucLuong, MaCV)
+VALUES (205, N'Trần Tấn Quốc', N'Nam', '1995/05/05', N'Hà Nội', 272815935, 'quocque@gmail.com', 0388774455, '2020/05/01', 19000000, 105);
 
-INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MaCV)
-VALUES (206, N'Hoắc Kiến Hoa', N'Nam', '1979/12/26', N'Đồng Tháp', 272833557, 'hoa@gami.com', 0311447788, '2020/05/01', 106);
+INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MucLuong, MaCV)
+VALUES (206, N'Hoắc Kiến Hoa', N'Nam', '1979/12/26', N'Đồng Tháp', 272833557, 'hoa@gami.com', 0311447788, '2020/05/01', 12000000, 106);
 
 
 						----------3.Bảng ĐĂNG NHẬP----------

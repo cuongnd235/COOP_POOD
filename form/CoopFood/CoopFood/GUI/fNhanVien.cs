@@ -57,6 +57,7 @@ namespace CoopFood
             txtSoDienThoai.Text = "";
             dtpNgayVaoLam.Value = DateTime.Now;
             cbTenChucVu.Text = "";
+            txtMucLuong.Text = "";
         }
 
         private async void btnLuu_Click(object sender, EventArgs e)
@@ -76,6 +77,7 @@ namespace CoopFood
                     Email = txtEmail.Text,
                     SDT = txtSoDienThoai.Text,
                     NgayVaoLam = dtpNgayVaoLam.Value,
+                    MucLuong = decimal.Parse(txtMucLuong.Text),
                     MaCV = Int32.Parse(cbTenChucVu.SelectedValue.ToString())
                 };
 
@@ -138,6 +140,8 @@ namespace CoopFood
 
                 cbTenChucVu.SelectedValue = row.Cells["MaCV"].Value.ToString();
                 cbTenChucVu.SelectedText = row.Cells["TenCV"].Value.ToString();
+
+                txtMucLuong.Text = row.Cells["MucLuong"].Value.ToString();
             }
         }
     }

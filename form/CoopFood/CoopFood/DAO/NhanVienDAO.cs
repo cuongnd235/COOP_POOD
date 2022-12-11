@@ -28,7 +28,7 @@ namespace CoopFood.DAO
 
         public Result ThemNhanVien(NhanVien employee)
         {
-            string querry = string.Format("INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MaCV) VALUES ({0}, N'{1}', N'{2}', '{3}', N'{4}', '{5}', '{6}', '{7}', '{8}', {9});", employee.MaNV, employee.TenNV, employee.GioiTinh, employee.NgaySinh, employee.DiaChi, employee.CMND, employee.Email, employee.SDT, employee.NgayVaoLam, employee.MaCV);
+            string querry = string.Format("INSERT INTO NHANVIEN (MaNV, TenNV, GioiTinh, NgaySinh, DiaChi, CMND, Email, SDT, NgayVaoLam, MucLuong, MaCV) VALUES ({0}, N'{1}', N'{2}', '{3}', N'{4}', '{5}', '{6}', '{7}', '{8}', {9}, {10});", employee.MaNV, employee.TenNV, employee.GioiTinh, employee.NgaySinh, employee.DiaChi, employee.CMND, employee.Email, employee.SDT, employee.NgayVaoLam, employee.MucLuong, employee.MaCV);
             int result = DataProvider.Instance.ExecuteNonQuery(querry);
             return new Result()
             {
@@ -39,7 +39,7 @@ namespace CoopFood.DAO
 
         public Result SuaNhanVien(NhanVien employee)
         {
-            string querry = string.Format("UPDATE NHANVIEN set TenNV = N'{0}', GioiTinh = N'{1}', NgaySinh = N'{2}', DiaChi = N'{3}', CMND = '{4}', Email = '{5}', SDT = '{6}', NgayVaoLam = N'{7}', MaCV = {8} WHERE MaNV = {9};", employee.TenNV, employee.GioiTinh, employee.NgaySinh, employee.DiaChi, employee.CMND, employee.Email, employee.SDT, employee.NgayVaoLam, employee.MaCV, employee.MaNV);
+            string querry = string.Format("UPDATE NHANVIEN set TenNV = N'{0}', GioiTinh = N'{1}', NgaySinh = N'{2}', DiaChi = N'{3}', CMND = '{4}', Email = '{5}', SDT = '{6}', NgayVaoLam = N'{7}', MucLuong = {8} MaCV = {9} WHERE MaNV = {10};", employee.TenNV, employee.GioiTinh, employee.NgaySinh, employee.DiaChi, employee.CMND, employee.Email, employee.SDT, employee.NgayVaoLam, employee.MucLuong, employee.MaCV, employee.MaNV);
             int result = DataProvider.Instance.ExecuteNonQuery(querry);
             return new Result()
             {

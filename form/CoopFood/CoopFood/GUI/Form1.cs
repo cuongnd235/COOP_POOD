@@ -1,5 +1,7 @@
 ﻿using CoopFood.DAO;
 using CoopFood.DTO;
+using CoopFood.Enumerates;
+using CoopFood.Utills;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -35,10 +37,13 @@ namespace CoopFood
             //var result = await TaiKhoanDAO.Instance.Login("QL201", "123456");
             var result = await TaiKhoanDAO.Instance.Login(txtUsername.Text, txtPassword.Text);
             if (result.Count > 0)
+            {
                 _loginRes = result.FirstOrDefault();
-
-            fTrangChu f = new fTrangChu();
-            f.Show();
+                fTrangChu f = new fTrangChu();
+                f.Show();
+            }    
+            else
+                MessageBoxUtil.ShowMessageBox("Tài khoản hoặc mật khẩu không chính xác. Vui lòng kiểm tra lại", MessageBoxType.Warning);
         }
     }
 }
