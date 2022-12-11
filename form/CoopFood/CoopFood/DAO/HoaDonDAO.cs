@@ -24,7 +24,7 @@ namespace CoopFood.DAO
             JOIN KHACHHANG kh ON hd.MaKH = kh.MaKH
             JOIN SANPHAM sp ON ct.MaSP = sp.MaSP
             LEFT JOIN DONVITINH dvt ON sp.MaDVT = dvt.MaDVT {0}";
-            sql = string.IsNullOrWhiteSpace(keySearch) ? string.Format(sql, String.Empty) : string.Format(sql, $" WHERE kh.TenKH like N'%{keySearch}%' or nv.TenNV like N'%{keySearch}%'");
+            sql = string.IsNullOrWhiteSpace(keySearch) ? string.Format(sql, String.Empty) : string.Format(sql, $" WHERE kh.TenKH like N'%{keySearch}%' or nv.TenNV like N'%{keySearch}%' or hd.MaHD like '%{keySearch}%'");
 
             return await DataProvider.Instance.SqlQueryAsync<HoaDon>(sql);
         }

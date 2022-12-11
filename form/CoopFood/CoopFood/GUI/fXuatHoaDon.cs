@@ -5,7 +5,6 @@ using CoopFood.Utills;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
-using System.Data;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +14,7 @@ namespace CoopFood
 {
     public partial class fXuatHoaDon : Form
     {
-        
+        DataGridViewRow _row;
         public fXuatHoaDon()
         {
             InitializeComponent();
@@ -37,7 +36,10 @@ namespace CoopFood
                 totalMoney += item.SoLuongBan * item.GiaSP;
 
             txtTongTien.Text = totalMoney.ToString();
+
             dtgvCTHD.DataSource = result;
+            _row = this.dtgvCTHD.Rows[0];
+            SetDefaultValue(_row);
 
             NhanVienDAO.Instance.ThemDanhSachNhanvienVaoComboBox(cbTenNhanVien);
             KhachHangDAO.Instance.ThemDanhSachKhachHangVaoComboBox(cbTenKhachHang);
@@ -122,24 +124,28 @@ namespace CoopFood
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dtgvCTHD.Rows[e.RowIndex];
+                _row = this.dtgvCTHD.Rows[e.RowIndex];
 
-                txtMaHoaDon.Text = row.Cells["MaHD"].Value.ToString();
-
-                cbTenNhanVien.SelectedValue = int.Parse(row.Cells["MaNV"].Value.ToString());
-                cbTenNhanVien.Text = row.Cells["TenNV"].Value.ToString();
-
-                cbTenKhachHang.SelectedValue = int.Parse(row.Cells["MaKH"].Value.ToString());
-                cbTenKhachHang.Text = row.Cells["TenKH"].Value.ToString();
-
-                cbTenSanPham.SelectedValue = int.Parse(row.Cells["MaSP"].Value.ToString());
-                cbTenSanPham.Text = row.Cells["TenSP"].Value.ToString();
-
-                txtSoLuong.Text = row.Cells["SoLuongBan"].Value.ToString();
-                txtGiaBan.Text = row.Cells["GiaSP"].Value.ToString();
-                dtpNgayLap.Value = DateTime.Parse(row.Cells["NgayMua"].Value.ToString());
-                txtTongTien.Text = row.Cells["TongTien"].Value.ToString();
+                SetDefaultValue(_row);
             }
+        }
+
+        private void SetDefaultValue(DataGridViewRow _row)
+        {
+            txtMaHoaDon.Text = _row.Cells["MaHD"].Value.ToString();
+
+            cbTenNhanVien.SelectedValue = int.Parse(_row.Cells["MaNV"].Value.ToString());
+            cbTenNhanVien.Text = _row.Cells["TenNV"].Value.ToString();
+
+            cbTenKhachHang.SelectedValue = int.Parse(_row.Cells["MaKH"].Value.ToString());
+            cbTenKhachHang.Text = _row.Cells["TenKH"].Value.ToString();
+
+            cbTenSanPham.SelectedValue = int.Parse(_row.Cells["MaSP"].Value.ToString());
+            cbTenSanPham.Text = _row.Cells["TenSP"].Value.ToString();
+
+            txtSoLuong.Text = _row.Cells["SoLuongBan"].Value.ToString();
+            txtGiaBan.Text = _row.Cells["GiaSP"].Value.ToString();
+            dtpNgayLap.Value = DateTime.Parse(_row.Cells["NgayMua"].Value.ToString());
         }
 
         private void btnXuat_Click(object sender, EventArgs e)
@@ -211,7 +217,6 @@ namespace CoopFood
                 MessageBox.Show("Không có dữ liệu xuất");
             }
         }
-
     }
 
 }
