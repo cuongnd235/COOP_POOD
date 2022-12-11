@@ -33,7 +33,7 @@ namespace CoopFood
             decimal totalMoney = 0;
             var result = await HoaDonDAO.Instance.DanhSachHoaDon(keySearch);
             foreach (var item in result)
-                totalMoney += item.SoLuongBan * item.GiaSP;
+                totalMoney += item.SoLuongBan * item.GiaBan;
 
             txtTongTien.Text = totalMoney.ToString();
 
@@ -75,9 +75,9 @@ namespace CoopFood
 
                     MaSP = int.Parse(cbTenSanPham.SelectedValue.ToString()),
                     SoLuongBan = int.Parse(txtSoLuong.Text),
-                    GiaSP = decimal.Parse(txtGiaBan.Text),
+                    GiaBan = decimal.Parse(txtGiaBan.Text),
                 };
-                hoadon.TongTien = hoadon.SoLuongBan * hoadon.GiaSP;
+                hoadon.TongTien = hoadon.SoLuongBan * hoadon.GiaBan;
 
                 if ((await HoaDonDAO.Instance.DanhSachHoaDon(null)).Find(x => x.MaHD == hoadon.MaHD) == null)
                     result = HoaDonDAO.Instance.ThemHoaDon(hoadon);
@@ -98,7 +98,7 @@ namespace CoopFood
             {
                 if (DialogResult.Yes == MessageBox.Show("Bạn có chắc chắn muốn xoá?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                 {
-                    AfterCommit(HoaDonDAO.Instance.XoaHoaDon(Int32.Parse(txtMaHoaDon.Text)));
+                    AfterCommit(HoaDonDAO.Instance.XoaHoaDon(Int32.Parse(txtMaHoaDon.Text), Int32.Parse(cbTenSanPham.SelectedValue.ToString())));
                 }
             }
             catch
@@ -144,7 +144,7 @@ namespace CoopFood
             cbTenSanPham.Text = _row.Cells["TenSP"].Value.ToString();
 
             txtSoLuong.Text = _row.Cells["SoLuongBan"].Value.ToString();
-            txtGiaBan.Text = _row.Cells["GiaSP"].Value.ToString();
+            txtGiaBan.Text = _row.Cells["GiaBan"].Value.ToString();
             dtpNgayLap.Value = DateTime.Parse(_row.Cells["NgayMua"].Value.ToString());
         }
 
@@ -216,6 +216,12 @@ namespace CoopFood
             {
                 MessageBox.Show("Không có dữ liệu xuất");
             }
+        }
+
+        private async void cbTenSanPham_DropDownClosed(object sender, EventArgs e)
+        {
+            var product = await SanPhamDAO.Instance.LaySanPhamTheoMaSP(int.Parse(cbTenSanPham.SelectedValue.ToString()));
+            txtGiaBan.Text = product.GiaBan.ToString();
         }
     }
 

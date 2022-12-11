@@ -16,7 +16,7 @@ namespace CoopFood.DTO
         public string TenSP { get; set; }
         public int SoLuongBan { get; set; }
         public string TenDVT { get; set; }
-        public decimal GiaSP { get; set; }
+        public decimal GiaBan { get; set; }
         public decimal TongTien { get; set; }
         public DateTime NgayMua { get; set; }
         public int MaNV { get; set; }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CoopFood.DTO;
@@ -24,8 +25,15 @@ namespace CoopFood.DAO
             join NHACUNGCAP ncc ON sp.MaNCC = ncc.MaNCC
             join DONVITINH dvt ON sp.MaDVT = dvt.MaDVT {0}";
 
-            sql = string.IsNullOrWhiteSpace(tenSP) ? string.Format(sql, string.Empty): string.Format(sql, $" sp.where TenSP like N'%{tenSP}%'") ;
+            sql = string.IsNullOrWhiteSpace(tenSP) ? string.Format(sql, string.Empty): string.Format(sql, $" where sp.TenSP like N'%{tenSP}%'") ;
             return await DataProvider.Instance.SqlQueryAsync<SanPham>(sql);
+        }
+
+        public async Task<SanPhamMN> LaySanPhamTheoMaSP(int maSP)
+        {
+            string sql = $"SELECT * FROM SANPHAM where MaSP = {maSP}";
+
+            return (await DataProvider.Instance.SqlQueryAsync<SanPhamMN>(sql)).FirstOrDefault();
         }
 
         public Result ThemSanPham(SanPhamReq sanPhamReq)

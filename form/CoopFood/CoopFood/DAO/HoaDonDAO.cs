@@ -18,7 +18,7 @@ namespace CoopFood.DAO
 
         public async Task<List<HoaDon>> DanhSachHoaDon(string keySearch)
         {
-            string sql = @"SELECT hd.*, ct.*, nv.TenNV, kh.TenKH, sp.TenSP, dvt.TenDV AS TenDVT FROM HD hd
+            string sql = @"SELECT hd.*, ct.*, nv.TenNV, kh.TenKH, sp.TenSP, sp.GiaBan, dvt.TenDV AS TenDVT FROM HD hd
             JOIN CT_HD ct ON hd.MaHD = ct.MaHD
             JOIN NHANVIEN nv ON hd.MaNV = nv.MaNV
             JOIN KHACHHANG kh ON hd.MaKH = kh.MaKH
@@ -36,12 +36,15 @@ namespace CoopFood.DAO
             string query = string.Format("INSERT INTO HD (MaHD, MaNV, MaKH, NgayMua, TongTien) VALUES ({0}, {1}, {2}, '{3}', {4})", hoaDon.MaHD, hoaDon.MaNV, hoaDon.MaKH, hoaDon.NgayMua, hoaDon.TongTien);
             result = DataProvider.Instance.ExecuteNonQuery(query);
 
-            string query1 = string.Format("INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan, GiaSP) VALUES ({0}, {1}, {2}, {3})", hoaDon.MaHD, hoaDon.MaSP, hoaDon.SoLuongBan, hoaDon.GiaSP);
-            result = DataProvider.Instance.ExecuteNonQuery(query1);
+            string queryUpdateCTHD = string.Format("INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan) VALUES ({0}, {1}, {2})", hoaDon.MaHD, hoaDon.MaSP, hoaDon.SoLuongBan);
+            result = DataProvider.Instance.ExecuteNonQuery(queryUpdateCTHD);
+
+            string queryUpdateTichLuy = string.Format("UPDATE KHACHHANG SET TichLuy = {0} WHERE MaKH = {1}", (int)(hoaDon.SoLuongBan*hoaDon.GiaBan / 10000), hoaDon.MaKH);
+            result = DataProvider.Instance.ExecuteNonQuery(queryUpdateTichLuy);
 
             return new Result()
             {
-                IsSuccessed = result > 0,
+                  IsSuccessed = result > 0,
                 Message = result > 0 ? "Thêm mới thành công" : "Thêm mới thất bại. Vui lòng thử lại sau."
             };
         }
@@ -53,7 +56,7 @@ namespace CoopFood.DAO
             string query = string.Format("UPDATE HD SET MaNV = {0}, MaKH = {1}, NgayMua = '{2}', TongTien = {3} WHERE MaHD = {4}", hoaDon.MaNV, hoaDon.MaKH, hoaDon.NgayMua, hoaDon.TongTien, hoaDon.MaHD);
             result = DataProvider.Instance.ExecuteNonQuery(query);
 
-            string query1 = string.Format("UPDATE CT_HD SET MaSP = {0}, SoLuongBan = {1}, GiaSP = {2} WHERE MaHD = {3} and MaSP = {4}", hoaDon.MaSP, hoaDon.SoLuongBan, hoaDon.GiaSP, hoaDon.MaHD, hoaDon.MaSP);
+            string query1 = string.Format("UPDATE CT_HD SET MaSP = {0}, SoLuongBan = {1} WHERE MaHD = {2} and MaSP = {3}", hoaDon.MaSP, hoaDon.SoLuongBan, hoaDon.MaHD, hoaDon.MaSP);
             result = DataProvider.Instance.ExecuteNonQuery(query1);
 
             return new Result()
@@ -63,13 +66,9 @@ namespace CoopFood.DAO
             };
         }
 
-        public Result XoaHoaDon(int maHD)
+        public Result XoaHoaDon(int maHD, int maSP)
         {
-            int result = 0;
-
-            result = DataProvider.Instance.ExecuteNonQuery($"DELETE FROM HD WHERE MaHD = '{maHD}'");
-
-            result = DataProvider.Instance.ExecuteNonQuery($"DELETE FROM CT_HD WHERE MaHD = '{maHD}'");
+            var result = DataProvider.Instance.ExecuteNonQuery($"DELETE hd FROM HD hd INNER JOIN CT_HD ct ON hd.MaHD = hd.MaHD WHERE hd.MaHD = {maHD} and ct.MaSP = {maSP}");
 
             return new Result()
             {

@@ -42,4 +42,14 @@ namespace CoopFood.DTO
         public decimal GiaNhap { get; set; }
         public decimal KhuyenMai { get; set; }
     }
+
+    public class SanPhamMN
+    {
+        public int MaSP { get; set; }
+        public string TenSP { get; set; }
+        public int SoLuong { get; set; }
+        public decimal GiaBan { get; set; }
+        public decimal GiaNhap { get; set; }
+        public decimal KhuyenMai { get; set; }
+    }
 }

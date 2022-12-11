@@ -109,6 +109,7 @@ namespace CoopFood
             this.cbTenSanPham.Name = "cbTenSanPham";
             this.cbTenSanPham.Size = new System.Drawing.Size(209, 36);
             this.cbTenSanPham.TabIndex = 1;
+            this.cbTenSanPham.DropDownClosed += new System.EventHandler(this.cbTenSanPham_DropDownClosed);
             // 
             // cbTenKhachHang
             // 
