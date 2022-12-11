@@ -22,9 +22,11 @@ namespace CoopFood.DAO
             return await DataProvider.Instance.SqlQueryAsync<LoginRes>(sql);
         }
 
-        public async Task<List<TaiKhoan>> DanhSachTaiKhoan(string maNV) 
+        public async Task<List<TaiKhoan>> DanhSachTaiKhoan(string tenNV) 
         {
-            string sql = string.IsNullOrWhiteSpace(maNV) ? "SELECT * FROM TAIKHOAN" : $"SELECT * FROM TAIKHOAN where MaNV like '%{maNV}%'";
+            string sql = "SELECT tk.*, nv.TenNV FROM TAIKHOAN tk inner join NHANVIEN nv ON tk.MaNV = nv.MaNV {0}";
+
+            sql = string.IsNullOrWhiteSpace(tenNV) ? string.Format(sql, string.Empty) : string.Format(sql, $"where nv.TenNV like N'%{tenNV}%'");
 
             return await DataProvider.Instance.SqlQueryAsync<TaiKhoan>(sql);
         } 

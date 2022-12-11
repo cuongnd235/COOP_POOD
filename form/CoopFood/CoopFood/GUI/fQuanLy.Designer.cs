@@ -29,12 +29,15 @@ namespace CoopFood
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQuanLy));
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.cbPhanQuyen = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbTennhanvien = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,9 +51,6 @@ namespace CoopFood
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnTimKiem = new Guna.UI2.WinForms.Guna2CircleButton();
             this.txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cbTennhanvien = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbPhanQuyen = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTaiKhoan)).BeginInit();
@@ -86,6 +86,52 @@ namespace CoopFood
             this.guna2GroupBox1.Size = new System.Drawing.Size(406, 448);
             this.guna2GroupBox1.TabIndex = 38;
             this.guna2GroupBox1.Text = "Thông tin tài khoản";
+            // 
+            // cbPhanQuyen
+            // 
+            this.cbPhanQuyen.BackColor = System.Drawing.Color.Transparent;
+            this.cbPhanQuyen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbPhanQuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPhanQuyen.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPhanQuyen.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbPhanQuyen.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbPhanQuyen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbPhanQuyen.ItemHeight = 30;
+            this.cbPhanQuyen.Items.AddRange(new object[] {
+            "Nhân viên",
+            "Quản lý"});
+            this.cbPhanQuyen.Location = new System.Drawing.Point(175, 282);
+            this.cbPhanQuyen.Name = "cbPhanQuyen";
+            this.cbPhanQuyen.Size = new System.Drawing.Size(209, 36);
+            this.cbPhanQuyen.TabIndex = 28;
+            this.cbPhanQuyen.SelectedValueChanged += new System.EventHandler(this.cbPhanQuyen_SelectedValueChanged);
+            // 
+            // cbTennhanvien
+            // 
+            this.cbTennhanvien.BackColor = System.Drawing.Color.Transparent;
+            this.cbTennhanvien.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTennhanvien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTennhanvien.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTennhanvien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTennhanvien.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbTennhanvien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbTennhanvien.ItemHeight = 30;
+            this.cbTennhanvien.Location = new System.Drawing.Point(175, 221);
+            this.cbTennhanvien.Name = "cbTennhanvien";
+            this.cbTennhanvien.Size = new System.Drawing.Size(209, 36);
+            this.cbTennhanvien.TabIndex = 26;
+            this.cbTennhanvien.SelectedValueChanged += new System.EventHandler(this.cbTennhanvien_SelectedValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.Location = new System.Drawing.Point(5, 232);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(127, 25);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Tên nhân viên";
             // 
             // label4
             // 
@@ -173,26 +219,26 @@ namespace CoopFood
             // 
             // dtgvTaiKhoan
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.dtgvTaiKhoan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dtgvTaiKhoan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvTaiKhoan.ColumnHeadersHeight = 4;
             this.dtgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvTaiKhoan.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTaiKhoan.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtgvTaiKhoan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtgvTaiKhoan.Location = new System.Drawing.Point(3, 3);
             this.dtgvTaiKhoan.Name = "dtgvTaiKhoan";
@@ -222,6 +268,7 @@ namespace CoopFood
             this.dtgvTaiKhoan.ThemeStyle.RowsStyle.Height = 24;
             this.dtgvTaiKhoan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtgvTaiKhoan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dtgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvTaiKhoan_CellClick);
             // 
             // guna2GroupBox2
             // 
@@ -351,52 +398,6 @@ namespace CoopFood
             this.txtTimKiem.Size = new System.Drawing.Size(200, 35);
             this.txtTimKiem.TabIndex = 42;
             this.txtTimKiem.TextOffset = new System.Drawing.Point(5, 0);
-            // 
-            // cbTennhanvien
-            // 
-            this.cbTennhanvien.BackColor = System.Drawing.Color.Transparent;
-            this.cbTennhanvien.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTennhanvien.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTennhanvien.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTennhanvien.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbTennhanvien.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbTennhanvien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbTennhanvien.ItemHeight = 30;
-            this.cbTennhanvien.Location = new System.Drawing.Point(175, 221);
-            this.cbTennhanvien.Name = "cbTennhanvien";
-            this.cbTennhanvien.Size = new System.Drawing.Size(209, 36);
-            this.cbTennhanvien.TabIndex = 26;
-            this.cbTennhanvien.SelectedValueChanged += new System.EventHandler(this.cbTennhanvien_SelectedValueChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(5, 232);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 25);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Tên nhân viên";
-            // 
-            // cbPhanQuyen
-            // 
-            this.cbPhanQuyen.BackColor = System.Drawing.Color.Transparent;
-            this.cbPhanQuyen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbPhanQuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPhanQuyen.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbPhanQuyen.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbPhanQuyen.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbPhanQuyen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbPhanQuyen.ItemHeight = 30;
-            this.cbPhanQuyen.Items.AddRange(new object[] {
-            "Nhân viên",
-            "Quản lý"});
-            this.cbPhanQuyen.Location = new System.Drawing.Point(175, 282);
-            this.cbPhanQuyen.Name = "cbPhanQuyen";
-            this.cbPhanQuyen.Size = new System.Drawing.Size(209, 36);
-            this.cbPhanQuyen.TabIndex = 28;
-            this.cbPhanQuyen.SelectedValueChanged += new System.EventHandler(this.cbPhanQuyen_SelectedValueChanged);
             // 
             // fQuanLy
             // 

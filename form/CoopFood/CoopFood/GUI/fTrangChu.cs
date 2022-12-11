@@ -18,6 +18,10 @@ namespace CoopFood
 
         private void SetFormByPermission()
         {
+            lbTenForm.Visible = true;
+            lbTenForm.Text = "Trang Chủ";
+            container(new fTrangChuShadow());
+
             if (_loginRes.PhanQuyen == "Nhân viên")
             {
                 btnTaiKhoan.Visible = false;

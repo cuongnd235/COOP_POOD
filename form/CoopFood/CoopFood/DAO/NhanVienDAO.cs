@@ -20,7 +20,8 @@ namespace CoopFood.DAO
 
         public async Task<List<NhanVien>> DanhSachNhanVien(string tenNV)
         {
-            string sql = string.IsNullOrWhiteSpace(tenNV) ? "SELECT * FROM NHANVIEN" : $"SELECT * FROM NHANVIEN where TenNV like '%{tenNV}%'";
+            string sql = "SELECT nv.*, cv.TenCV FROM NHANVIEN nv JOIN CHUCVU cv ON nv.MaCV = cv.MaCV {0}";
+            sql = string.IsNullOrWhiteSpace(tenNV) ? String.Format(sql, string.Empty) : String.Format(sql, $"where nv.TenNV like N'%{tenNV}%'");
 
             return await DataProvider.Instance.SqlQueryAsync<NhanVien>(sql);
         }

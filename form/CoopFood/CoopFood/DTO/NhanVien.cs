@@ -16,6 +16,7 @@ namespace CoopFood.DTO
         public string TenNV { get; set; }
         public string GioiTinh { get; set; }
         public DateTime NgaySinh { get; set; }
+        public string TenCV { get; set; }
         public string DiaChi { get; set; }
         public string CMND { get; set; }
         public string Email { get; set; }

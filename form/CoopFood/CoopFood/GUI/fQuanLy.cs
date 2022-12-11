@@ -27,7 +27,7 @@ namespace CoopFood
             NhanVienDAO.Instance.ThemDanhSachNhanvienVaoComboBox(cbTennhanvien);
         }
 
-        private async Task LoadTaiKhoan(string maNV = null) => dtgvTaiKhoan.DataSource = await TaiKhoanDAO.Instance.DanhSachTaiKhoan(maNV);
+        private async Task LoadTaiKhoan(string tenNV = null) => dtgvTaiKhoan.DataSource = await TaiKhoanDAO.Instance.DanhSachTaiKhoan(tenNV);
         
         void SanPhamBinding()
         {
@@ -111,6 +111,19 @@ namespace CoopFood
                 txtTenDangNhap.Text = "QL" + cbTennhanvien.SelectedValue;
             else
                 txtTenDangNhap.Text = "NV" + cbTennhanvien.SelectedValue;
+        }
+
+        private void dtgvTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dtgvTaiKhoan.Rows[e.RowIndex];
+
+            txtTenDangNhap.Text = row.Cells["TenDangNhap"].Value.ToString();
+            txtMatKhau.Text = row.Cells["MatKhau"].Value.ToString();
+
+            cbTennhanvien.SelectedValue = int.Parse(row.Cells["MaNV"].Value.ToString());
+            cbTennhanvien.SelectedText = row.Cells["TenNV"].Value.ToString();
+
+            cbPhanQuyen.Text = row.Cells["PhanQuyen"].Value.ToString();
         }
     }
 }

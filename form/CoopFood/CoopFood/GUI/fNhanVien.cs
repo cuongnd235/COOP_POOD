@@ -3,12 +3,7 @@ using CoopFood.DTO;
 using CoopFood.Enumerates;
 using CoopFood.Utills;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -55,12 +50,12 @@ namespace CoopFood
             txtMaNhanVien.Text = maNV.ToString();
             txtTenNhanVien.Text = "";
             cbGioiTinh.Text = "";
-            dtpNgaySinh.Text = "";
+            dtpNgaySinh.Value = DateTime.Now;
             txtDiaChi.Text = "";
             txtCMND.Text = "";
             txtEmail.Text = "";
             txtSoDienThoai.Text = "";
-            dtpNgayVaoLam.Text = "";
+            dtpNgayVaoLam.Value = DateTime.Now;
             cbTenChucVu.Text = "";
         }
 
@@ -117,12 +112,33 @@ namespace CoopFood
             if (result.IsSuccessed)
             {
                 MessageBoxUtil.ShowMessageBox(result.Message, MessageBoxType.Information);
-                _ = LoadNhanVien();
+                _ =LoadNhanVien();
             }
             else if (result.IsSuccessed == false)
                 MessageBoxUtil.ShowMessageBox(result.Message, MessageBoxType.Error);
         }
 
         private async void btnTimKiem_Click(object sender, EventArgs e) => await LoadNhanVien(txtTimKiem.Text);
+
+        private void dtgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvNhanVien.Rows[e.RowIndex];
+
+                txtMaNhanVien.Text = row.Cells["MaNV"].Value.ToString();
+                txtTenNhanVien.Text = row.Cells["TenNV"].Value.ToString();
+                cbGioiTinh.Text = row.Cells["GioiTinh"].Value.ToString();
+                dtpNgaySinh.Value = DateTime.Parse(row.Cells["NgaySinh"].Value.ToString());
+                txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
+                txtCMND.Text = row.Cells["CMND"].Value.ToString();
+                txtEmail.Text = row.Cells["Email"].Value.ToString();
+                txtSoDienThoai.Text = row.Cells["SDT"].Value.ToString();
+                dtpNgayVaoLam.Value = DateTime.Parse(row.Cells["NgayVaoLam"].Value.ToString());
+
+                cbTenChucVu.SelectedValue = row.Cells["MaCV"].Value.ToString();
+                cbTenChucVu.SelectedText = row.Cells["TenCV"].Value.ToString();
+            }
+        }
     }
 }

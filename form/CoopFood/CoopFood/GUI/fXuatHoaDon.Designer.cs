@@ -35,11 +35,9 @@ namespace CoopFood
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fXuatHoaDon));
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.cbDonVi = new System.Windows.Forms.ComboBox();
             this.cbTenSanPham = new System.Windows.Forms.ComboBox();
             this.cbTenKhachHang = new System.Windows.Forms.ComboBox();
             this.cbTenNhanVien = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtSoLuong = new Guna.UI2.WinForms.Guna2TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -81,11 +79,9 @@ namespace CoopFood
             // 
             // guna2GroupBox1
             // 
-            this.guna2GroupBox1.Controls.Add(this.cbDonVi);
             this.guna2GroupBox1.Controls.Add(this.cbTenSanPham);
             this.guna2GroupBox1.Controls.Add(this.cbTenKhachHang);
             this.guna2GroupBox1.Controls.Add(this.cbTenNhanVien);
-            this.guna2GroupBox1.Controls.Add(this.label5);
             this.guna2GroupBox1.Controls.Add(this.txtSoLuong);
             this.guna2GroupBox1.Controls.Add(this.label11);
             this.guna2GroupBox1.Controls.Add(this.label12);
@@ -105,14 +101,6 @@ namespace CoopFood
             this.guna2GroupBox1.Size = new System.Drawing.Size(388, 460);
             this.guna2GroupBox1.TabIndex = 26;
             this.guna2GroupBox1.Text = "Nhập thông tin";
-            // 
-            // cbDonVi
-            // 
-            this.cbDonVi.FormattingEnabled = true;
-            this.cbDonVi.Location = new System.Drawing.Point(162, 304);
-            this.cbDonVi.Name = "cbDonVi";
-            this.cbDonVi.Size = new System.Drawing.Size(209, 36);
-            this.cbDonVi.TabIndex = 1;
             // 
             // cbTenSanPham
             // 
@@ -138,17 +126,6 @@ namespace CoopFood
             this.cbTenNhanVien.Size = new System.Drawing.Size(209, 36);
             this.cbTenNhanVien.TabIndex = 1;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(4, 315);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 25);
-            this.label5.TabIndex = 36;
-            this.label5.Text = "Đơn vị";
-            // 
             // txtSoLuong
             // 
             this.txtSoLuong.BorderColor = System.Drawing.Color.ForestGreen;
@@ -161,7 +138,7 @@ namespace CoopFood
             this.txtSoLuong.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSoLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoLuong.Location = new System.Drawing.Point(162, 363);
+            this.txtSoLuong.Location = new System.Drawing.Point(162, 320);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.PasswordChar = '\0';
             this.txtSoLuong.PlaceholderText = "";
@@ -175,7 +152,7 @@ namespace CoopFood
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.Gray;
-            this.label11.Location = new System.Drawing.Point(4, 365);
+            this.label11.Location = new System.Drawing.Point(4, 322);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(87, 25);
             this.label11.TabIndex = 32;
@@ -230,7 +207,7 @@ namespace CoopFood
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(4, 410);
+            this.label3.Location = new System.Drawing.Point(3, 386);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 25);
             this.label3.TabIndex = 24;
@@ -273,7 +250,7 @@ namespace CoopFood
             this.txtGiaBan.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtGiaBan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtGiaBan.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtGiaBan.Location = new System.Drawing.Point(162, 408);
+            this.txtGiaBan.Location = new System.Drawing.Point(162, 384);
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.PasswordChar = '\0';
             this.txtGiaBan.PlaceholderText = "";
@@ -364,6 +341,7 @@ namespace CoopFood
             this.dtgvCTHD.ThemeStyle.RowsStyle.Height = 24;
             this.dtgvCTHD.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dtgvCTHD.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dtgvCTHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvCTHD_CellClick);
             // 
             // label4
             // 
@@ -508,6 +486,7 @@ namespace CoopFood
             this.btnXuat.Size = new System.Drawing.Size(229, 42);
             this.btnXuat.TabIndex = 16;
             this.btnXuat.Text = "Xuất";
+            this.btnXuat.Click += new System.EventHandler(this.btnXuat_Click);
             // 
             // txtTimKiem
             // 
@@ -602,12 +581,10 @@ namespace CoopFood
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
         private Guna.UI2.WinForms.Guna2Button btnXuat;
         private Guna.UI2.WinForms.Guna2TextBox txtSoLuong;
-        private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2CircleButton btnTimKiem;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Guna.UI2.WinForms.Guna2Button btnTao;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
-        private System.Windows.Forms.ComboBox cbDonVi;
         private System.Windows.Forms.ComboBox cbTenSanPham;
         private System.Windows.Forms.ComboBox cbTenKhachHang;
         private System.Windows.Forms.ComboBox cbTenNhanVien;

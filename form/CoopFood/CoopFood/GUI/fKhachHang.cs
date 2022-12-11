@@ -35,7 +35,7 @@ namespace CoopFood
             cbGioiTinh.DataBindings.Add(new Binding("Text", dtgvKhachHang.DataSource, "GioiTinh", true, DataSourceUpdateMode.Never));
             dtpNgaySinh.DataBindings.Add(new Binding("Text", dtgvKhachHang.DataSource, "NgaySinh", true, DataSourceUpdateMode.Never));
             txtSoDienThoai.DataBindings.Add(new Binding("Text", dtgvKhachHang.DataSource, "SDT", true, DataSourceUpdateMode.Never));
-            txtDiaChi.DataBindings.Add(new Binding("Text", dtgvKhachHang.DataSource, "SDT", true, DataSourceUpdateMode.Never));
+            txtDiaChi.DataBindings.Add(new Binding("Text", dtgvKhachHang.DataSource, "DiaChi", true, DataSourceUpdateMode.Never));
             txtTichLuy.DataBindings.Add(new Binding("Text", dtgvKhachHang.DataSource, "TichLuy", true, DataSourceUpdateMode.Never));
         }
 
@@ -46,7 +46,7 @@ namespace CoopFood
             txtMaKhachHang.Text = maKH.ToString();
             txtTenKhachHang.Text = "";
             cbGioiTinh.Text = "";
-            dtpNgaySinh.Text = "";
+            dtpNgaySinh.Value = DateTime.Now;
             txtDiaChi.Text = "";
             txtSoDienThoai.Text = "";
             txtTichLuy.Text = "";
@@ -104,12 +104,28 @@ namespace CoopFood
             if (result.IsSuccessed)
             {
                 MessageBoxUtil.ShowMessageBox(result.Message, MessageBoxType.Information);
-                _ = LoadKhachHang();
+                _ =LoadKhachHang();
             }
             else if (result.IsSuccessed == false)
                 MessageBoxUtil.ShowMessageBox(result.Message, MessageBoxType.Error);
         }
 
         private async void btnTimKiem_Click(object sender, EventArgs e) => await LoadKhachHang(txtTimKiem.Text);
+
+        private void dtgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvKhachHang.Rows[e.RowIndex];
+
+                txtMaKhachHang.Text = row.Cells["MaKH"].Value.ToString();
+                txtTenKhachHang.Text = row.Cells["TenKH"].Value.ToString();
+                cbGioiTinh.Text = row.Cells["GioiTinh"].Value.ToString();
+                dtpNgaySinh.Value = DateTime.Parse(row.Cells["NgaySinh"].Value.ToString());
+                txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
+                txtSoDienThoai.Text = row.Cells["SDT"].Value.ToString();
+                txtTichLuy.Text = row.Cells["TichLuy"].Value.ToString();
+            }
+        }
     }
 }

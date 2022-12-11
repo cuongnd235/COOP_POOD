@@ -122,12 +122,39 @@ namespace CoopFood
             if (result.IsSuccessed)
             {
                 MessageBoxUtil.ShowMessageBox(result.Message, MessageBoxType.Information);
-                _ = LoadSanPham();
+                _ =LoadSanPham();
             }
             else if (result.IsSuccessed == false)
                 MessageBoxUtil.ShowMessageBox(result.Message, MessageBoxType.Error);
         }
 
         private async void btnTimKiem_Click(object sender, EventArgs e) => await LoadSanPham(txtTimKiem.Text);
+
+        private void dtgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvSanPham.Rows[e.RowIndex];
+
+                txtMaSanPham.Text = row.Cells["MaSP"].Value.ToString();
+                txtTenSanPham.Text = row.Cells["TenSP"].Value.ToString();
+
+                cbDonVi.SelectedValue = int.Parse(row.Cells["MaDVT"].Value.ToString());
+                cbDonVi.SelectedText = row.Cells["TenDV"].Value.ToString();
+
+                cbMaLoaiSanPham.SelectedValue = int.Parse(row.Cells["MaLSP"].Value.ToString());
+                cbMaLoaiSanPham.SelectedText = row.Cells["TenLSP"].Value.ToString();
+
+                cbMaNCC.SelectedValue = int.Parse(row.Cells["MaNCC"].Value.ToString());
+                cbMaNCC.SelectedText = row.Cells["TenNCC"].Value.ToString();
+
+                txtSoLuong.Text = row.Cells["SoLuong"].Value.ToString();
+                dtpNSX.Value = DateTime.Parse(row.Cells["NSX"].Value.ToString());
+                dtpHSD.Value = DateTime.Parse(row.Cells["HSD"].Value.ToString());
+                dtpNgayNhap.Value = DateTime.Parse(row.Cells["NgayNhap"].Value.ToString());
+                txtGiaNhap.Text = row.Cells["GiaNhap"].Value.ToString();
+                txtGiaBan.Text = row.Cells["GiaBan"].Value.ToString();
+            }
+        }
     }
 }

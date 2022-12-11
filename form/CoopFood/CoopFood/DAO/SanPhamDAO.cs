@@ -17,10 +17,15 @@ namespace CoopFood.DAO
 
         private SanPhamDAO() { }
 
-        public async Task<List<SanPhamRes>> DanhSachSanPham(string tenSP) 
+        public async Task<List<SanPham>> DanhSachSanPham(string tenSP) 
         {
-            string sql = string.IsNullOrWhiteSpace(tenSP) ? "SELECT * FROM SANPHAM" : $"SELECT * FROM SANPHAM where TenSP like '%{tenSP}%'";
-            return await DataProvider.Instance.SqlQueryAsync<SanPhamRes>(sql);
+            string sql = @"SELECT sp.*, lsp.TenLSP, ncc.TenNCC, dvt.TenDV FROM SANPHAM sp 
+            join LOAISANPHAM lsp ON sp.MaLSP = lsp.MaLSP
+            join NHACUNGCAP ncc ON sp.MaNCC = ncc.MaNCC
+            join DONVITINH dvt ON sp.MaDVT = dvt.MaDVT {0}";
+
+            sql = string.IsNullOrWhiteSpace(tenSP) ? string.Format(sql, string.Empty): string.Format(sql, $" sp.where TenSP like N'%{tenSP}%'") ;
+            return await DataProvider.Instance.SqlQueryAsync<SanPham>(sql);
         }
 
         public Result ThemSanPham(SanPhamReq sanPhamReq)

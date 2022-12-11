@@ -101,5 +101,18 @@ namespace CoopFood
         }
 
         private async void btnTimKiem_Click(object sender, EventArgs e) => await LoadNhaCungCap(txtTimKiem.Text);
+
+        private void dtgvNCC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvNCC.Rows[e.RowIndex];
+
+                txtMaNCC.Text = row.Cells["MaNCC"].Value.ToString();
+                txtTenNCC.Text = row.Cells["TenNCC"].Value.ToString();
+                txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
+                txtSoDienThoai.Text = row.Cells["SDT"].Value.ToString();
+            }
+        }
     }
 }
