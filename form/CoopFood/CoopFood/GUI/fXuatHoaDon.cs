@@ -77,7 +77,6 @@ namespace CoopFood
                     SoLuongBan = int.Parse(txtSoLuong.Text),
                     GiaBan = decimal.Parse(txtGiaBan.Text),
                 };
-                hoadon.TongTien = hoadon.SoLuongBan * hoadon.GiaBan;
 
                 if ((await HoaDonDAO.Instance.DanhSachHoaDon(null)).Find(x => x.MaHD == hoadon.MaHD) == null)
                     result = HoaDonDAO.Instance.ThemHoaDon(hoadon);

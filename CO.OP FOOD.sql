@@ -127,8 +127,7 @@ CREATE TABLE CT_HD
 (
 	MaHD Int,
 	MaSP Int,
-	SoLuongBan Int CHECK (SoLuongBan >= 1),
-	GiaSP Money NOT NULL,
+	SoLuongBan Int CHECK (SoLuongBan >= 1)
 ----------Khóa ngoại----------
     FOREIGN KEY(MaHD) 
 		REFERENCES dbo.HD(MaHD)
@@ -371,19 +370,19 @@ INSERT INTO HD (MaHD, MaNV, MaKH, NgayMua, TongTien) VALUES (701, 204, 301, '202
 INSERT INTO HD (MaHD, MaNV, MaKH, NgayMua, TongTien) VALUES (702, 205, 302, '2022/01/03 08:30:00', NULL);
 
 						----------10.Bảng CHI TIẾT HÓA ĐƠN----------
-INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan, GiaSP) VALUES (701, 603, 1, 12000);
+INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan) VALUES (701, 603, 1);
 
-INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan, GiaSP) VALUES (701, 611, 6, 11000);
+INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan) VALUES (701, 611, 6);
 
-INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan, GiaSP) VALUES (701, 618, 1, 69000);
+INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan) VALUES (701, 618, 1);
 
-INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan, GiaSP) VALUES (701, 620, 10, 6000);
+INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan) VALUES (701, 620, 10);
 
-INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan, GiaSP) VALUES (701, 602, 1, 12000);
+INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan) VALUES (701, 602, 1);
 
-INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan, GiaSP) VALUES (702, 605, 1, 240000);
+INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan) VALUES (702, 605, 1);
 
-INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan, GiaSP) VALUES (702, 612, 24, 22000);
+INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan) VALUES (702, 612, 24);
 
 -----------------------------------------STORED PROCEDURE--------------------------------------------------
 						----------1.Proc Tài Khoản----------
