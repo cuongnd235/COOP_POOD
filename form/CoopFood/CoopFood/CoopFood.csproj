@@ -48,6 +48,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,6 +79,7 @@
     <Compile Include="DTO\Result.cs" />
     <Compile Include="DTO\SanPham.cs" />
     <Compile Include="DTO\TaiKhoan.cs" />
+    <Compile Include="DTO\ThongKe.cs" />
     <Compile Include="Enumerates\MessageBoxType.cs" />
     <Compile Include="GUI\fKhachHang.cs">
       <SubType>Form</SubType>

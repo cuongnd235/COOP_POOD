@@ -65,5 +65,7 @@ namespace CoopFood.DAO
             cb.DisplayMember = "TenNV";
             cb.ValueMember = "MaNV";
         }
+
+        public async Task<List<ThongKeLuongNhanVien>> LayDuLieuLuongNhanVien() => await DataProvider.Instance.SqlQueryAsync<ThongKeLuongNhanVien>("select NgayVaoLam, MucLuong from NHANVIEN");
     }
 }

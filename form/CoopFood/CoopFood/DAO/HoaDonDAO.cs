@@ -77,5 +77,14 @@ namespace CoopFood.DAO
                 Message = result > 0 ? "Xoá thành công" : "Xoá thất bại. Vui lòng thử lại sau."
             };
         }
+
+        public async Task<List<ThongKeDoanhThu>> LayDuLieuBaoCaoDoanhThu()
+        {
+            string sql = @"SELECT hd.NgayMua, (ct.SoLuongBan * sp.GiaBan) as TongTien FROM HD hd
+            JOIN CT_HD ct ON hd.MaHD = ct.MaHD
+            JOIN SANPHAM sp ON sp.MaSP = ct.MaSP";
+
+            return await DataProvider.Instance.SqlQueryAsync<ThongKeDoanhThu>(sql);
+        }
     }
 }
