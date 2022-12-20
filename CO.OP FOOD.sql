@@ -394,34 +394,35 @@ BEGIN
     SELECT * FROM dbo.TAIKHOAN
 	WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau
 END
-
+GO
 						----------2.Proc Báo Cáo Thống Kê----------
 ----a,Báo cáo doanh thu sản phẩm theo ngày---
-CREATE PROC [dbo].[SP_BCDTTheoNgay]
-    @Ngay Datetime
-AS
-BEGIN
-DECLARE @Ngay Datetime
-    SELECT A.MaSP, TenSP, NgayMua, TongTien, A.SoLuongBan, GiaSP
-	FROM CT_HD AS A, SANPHAM AS B, HD AS C
-	WHERE A.MaSP = B.MaSP AND A.MaHD = C.MaHD AND NgayMua >= @Ngay
-END
-
+-- CREATE PROC [dbo].[SP_BCDTTheoNgay]
+    -- @Ngay Datetime
+-- AS
+-- BEGIN
+-- DECLARE @Ngay Datetime
+    -- SELECT A.MaSP, TenSP, NgayMua, TongTien, A.SoLuongBan, GiaSP
+	-- FROM CT_HD AS A, SANPHAM AS B, HD AS C
+	-- WHERE A.MaSP = B.MaSP AND A.MaHD = C.MaHD AND NgayMua >= @Ngay
+-- END
+GO
 -----------------------------------------TRIGGER-----------------------------------------------------------
 ---1.Check giá của sản phẩm phải lớn hơn 0---
-CREATE TRIGGER TGCheckgiaSP ON SANPHAM FOR INSERT, UPDATE
-AS
-BEGIN
-	DECLARE @Gia Money
-	SELECT @Gia = GiaBan 
-	FROM inserted
-	IF(@Gia <= 0)
-	BEGIN
-	 PRINT N'Giá của dịch vụ phải lớn hơn 0'
-	 ROLLBACK TRAN
-	END
-END
-select * from khachhang
+-- CREATE TRIGGER TGCheckgiaSP ON SANPHAM FOR INSERT, UPDATE
+-- AS
+-- BEGIN
+	-- DECLARE @Gia Money
+	-- SELECT @Gia = GiaBan 
+	-- FROM inserted
+	-- IF(@Gia <= 0)
+	-- BEGIN
+	 -- PRINT N'Giá của dịch vụ phải lớn hơn 0'
+	 -- ROLLBACK TRAN
+	-- END
+-- END
+-- GO
+
 ---2.Check tuổi nhân viên phải đủ 18 tuổi---
 CREATE TRIGGER TGCheckTuoiNV ON NHANVIEN FOR INSERT, UPDATE
 AS
@@ -434,12 +435,12 @@ BEGIN
 	ROLLBACK TRAN
 	END
 END
-
+GO
 -------
-SELECT * FROM SANPHAM
+-- SELECT * FROM SANPHAM
 
-WHERE TenSP LIKE "a%";
+-- WHERE TenSP LIKE "a%";
 
-CREATE FUNCTION [dbo].[fuConvertToUnsign1] ( @strInput NVARCHAR(4000) ) RETURNS NVARCHAR(4000) AS BEGIN IF @strInput IS NULL RETURN @strInput IF @strInput = '' RETURN @strInput DECLARE @RT NVARCHAR(4000) DECLARE @SIGN_CHARS NCHAR(136) DECLARE @UNSIGN_CHARS NCHAR (136) SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' DECLARE @COUNTER int DECLARE @COUNTER1 int SET @COUNTER = 1 WHILE (@COUNTER <=LEN(@strInput)) BEGIN SET @COUNTER1 = 1 WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) BEGIN IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) BREAK END SET @COUNTER1 = @COUNTER1 +1 END SET @COUNTER = @COUNTER +1 END SET @strInput = replace(@strInput,' ','-') RETURN @strInput END
+-- CREATE FUNCTION [dbo].[fuConvertToUnsign1] ( @strInput NVARCHAR(4000) ) RETURNS NVARCHAR(4000) AS BEGIN IF @strInput IS NULL RETURN @strInput IF @strInput = '' RETURN @strInput DECLARE @RT NVARCHAR(4000) DECLARE @SIGN_CHARS NCHAR(136) DECLARE @UNSIGN_CHARS NCHAR (136) SET @SIGN_CHARS = N'ăâđêôơưàảãạáằẳẵặắầẩẫậấèẻẽẹéềểễệế ìỉĩịíòỏõọóồổỗộốờởỡợớùủũụúừửữựứỳỷỹỵý ĂÂĐÊÔƠƯÀẢÃẠÁẰẲẴẶẮẦẨẪẬẤÈẺẼẸÉỀỂỄỆẾÌỈĨỊÍ ÒỎÕỌÓỒỔỖỘỐỜỞỠỢỚÙỦŨỤÚỪỬỮỰỨỲỶỸỴÝ' +NCHAR(272)+ NCHAR(208) SET @UNSIGN_CHARS = N'aadeoouaaaaaaaaaaaaaaaeeeeeeeeee iiiiiooooooooooooooouuuuuuuuuuyyyyy AADEOOUAAAAAAAAAAAAAAAEEEEEEEEEEIIIII OOOOOOOOOOOOOOOUUUUUUUUUUYYYYYDD' DECLARE @COUNTER int DECLARE @COUNTER1 int SET @COUNTER = 1 WHILE (@COUNTER <=LEN(@strInput)) BEGIN SET @COUNTER1 = 1 WHILE (@COUNTER1 <=LEN(@SIGN_CHARS)+1) BEGIN IF UNICODE(SUBSTRING(@SIGN_CHARS, @COUNTER1,1)) = UNICODE(SUBSTRING(@strInput,@COUNTER ,1) ) BEGIN IF @COUNTER=1 SET @strInput = SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)-1) ELSE SET @strInput = SUBSTRING(@strInput, 1, @COUNTER-1) +SUBSTRING(@UNSIGN_CHARS, @COUNTER1,1) + SUBSTRING(@strInput, @COUNTER+1,LEN(@strInput)- @COUNTER) BREAK END SET @COUNTER1 = @COUNTER1 +1 END SET @COUNTER = @COUNTER +1 END SET @strInput = replace(@strInput,' ','-') RETURN @strInput END
 
-SELECT * FROM nhacungcap WHERE dbo.fuConvertToUnsign1(tenNCC) LIKE N'%' + dbo.fuConvertToUnsign1(N'cong') + '%'
+-- SELECT * FROM nhacungcap WHERE dbo.fuConvertToUnsign1(tenNCC) LIKE N'%' + dbo.fuConvertToUnsign1(N'cong') + '%'
