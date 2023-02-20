@@ -34,8 +34,8 @@ namespace CoopFood
 
         private async void guna2BtnLogin_Click(object sender, EventArgs e)
         {
-            var result = await TaiKhoanDAO.Instance.Login("QL201", "123456");
-            //var result = await TaiKhoanDAO.Instance.Login(txtUsername.Text, txtPassword.Text);
+            //var result = await TaiKhoanDAO.Instance.Login("QL201", "123456");
+            var result = await TaiKhoanDAO.Instance.Login(txtUsername.Text, txtPassword.Text);
             if (result.Count > 0)
             {
                 _loginRes = result.FirstOrDefault();
