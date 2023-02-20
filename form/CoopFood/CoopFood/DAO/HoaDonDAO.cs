@@ -34,7 +34,7 @@ namespace CoopFood.DAO
         {
             int result = 0;
 
-            string query = string.Format("INSERT INTO HD (MaHD, MaNV, MaKH, NgayMua, TongTien) VALUES ({0}, {1}, {2}, '{3}', {4})", hoaDon.MaHD, hoaDon.MaNV, hoaDon.MaKH, hoaDon.NgayMua, hoaDon.TongTien);
+            string query = string.Format("INSERT INTO HD (MaHD, MaNV, MaKH, NgayMua, TongTien) VALUES ({0}, {1}, {2}, '{3}', {4})", hoaDon.MaHD, hoaDon.MaNV, hoaDon.MaKH, hoaDon.NgayMuaOutput, hoaDon.TongTien);
             result = DataProvider.Instance.ExecuteNonQuery(query);
 
             string queryUpdateCTHD = string.Format("INSERT INTO CT_HD (MaHD, MaSP, SoLuongBan) VALUES ({0}, {1}, {2})", hoaDon.MaHD, hoaDon.MaSP, hoaDon.SoLuongBan);
@@ -57,7 +57,7 @@ namespace CoopFood.DAO
         {
             int result = 0;
 
-            string query = string.Format("UPDATE HD SET MaNV = {0}, MaKH = {1}, NgayMua = '{2}', TongTien = {3} WHERE MaHD = {4}", hoaDon.MaNV, hoaDon.MaKH, hoaDon.NgayMua, hoaDon.TongTien, hoaDon.MaHD);
+            string query = string.Format("UPDATE HD SET MaNV = {0}, MaKH = {1}, NgayMua = '{2}', TongTien = {3} WHERE MaHD = {4}", hoaDon.MaNV, hoaDon.MaKH, hoaDon.NgayMuaOutput, hoaDon.TongTien, hoaDon.MaHD);
             result = DataProvider.Instance.ExecuteNonQuery(query);
 
             string query1 = string.Format("UPDATE CT_HD SET MaSP = {0}, SoLuongBan = {1} WHERE MaHD = {2} and MaSP = {3}", hoaDon.MaSP, hoaDon.SoLuongBan, hoaDon.MaHD, hoaDon.MaSP);

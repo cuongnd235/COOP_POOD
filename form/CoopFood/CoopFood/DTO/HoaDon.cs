@@ -19,6 +19,7 @@ namespace CoopFood.DTO
         public decimal GiaBan { get; set; }
         public decimal TongTien { get; set; }
         public DateTime NgayMua { get; set; }
+        public string NgayMuaOutput => NgayMua != null ? NgayMua.ToString("dd/MM/yyyy") : DateTime.Now.ToString("dd/MM/yyyy");
         public int MaNV { get; set; }
         public int MaKH { get; set; }
         public int MaSP { get; set; }
