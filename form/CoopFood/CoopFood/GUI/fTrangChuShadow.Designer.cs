@@ -40,7 +40,7 @@ namespace CoopFood
             this.guna2PictureBox1.ImageRotate = 0F;
             this.guna2PictureBox1.Location = new System.Drawing.Point(-121, 3);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(1283, 703);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(1473, 714);
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
             // 
