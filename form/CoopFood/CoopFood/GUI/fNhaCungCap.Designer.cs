@@ -222,7 +222,7 @@ namespace CoopFood
             this.guna2Panel1.Controls.Add(this.dtgvNCC);
             this.guna2Panel1.Location = new System.Drawing.Point(416, 47);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(673, 648);
+            this.guna2Panel1.Size = new System.Drawing.Size(1016, 648);
             this.guna2Panel1.TabIndex = 29;
             // 
             // dtgvNCC
@@ -253,7 +253,7 @@ namespace CoopFood
             this.dtgvNCC.RowHeadersVisible = false;
             this.dtgvNCC.RowHeadersWidth = 51;
             this.dtgvNCC.RowTemplate.Height = 24;
-            this.dtgvNCC.Size = new System.Drawing.Size(667, 642);
+            this.dtgvNCC.Size = new System.Drawing.Size(1010, 642);
             this.dtgvNCC.TabIndex = 0;
             this.dtgvNCC.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtgvNCC.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -378,7 +378,7 @@ namespace CoopFood
             this.btnTimKiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnTimKiem.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(1041, 3);
+            this.btnTimKiem.Location = new System.Drawing.Point(1360, 6);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnTimKiem.Size = new System.Drawing.Size(48, 38);
@@ -398,7 +398,7 @@ namespace CoopFood
             this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(835, 6);
+            this.txtTimKiem.Location = new System.Drawing.Point(1154, 9);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.PlaceholderText = "Tìm kiếm";
@@ -412,7 +412,7 @@ namespace CoopFood
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1098, 705);
+            this.ClientSize = new System.Drawing.Size(1470, 705);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.txtTimKiem);

@@ -343,7 +343,7 @@ namespace CoopFood
             this.guna2Panel2_Top.FillColor = System.Drawing.Color.LimeGreen;
             this.guna2Panel2_Top.Location = new System.Drawing.Point(229, 0);
             this.guna2Panel2_Top.Name = "guna2Panel2_Top";
-            this.guna2Panel2_Top.Size = new System.Drawing.Size(1098, 60);
+            this.guna2Panel2_Top.Size = new System.Drawing.Size(1471, 60);
             this.guna2Panel2_Top.TabIndex = 1;
             // 
             // lbTenForm
@@ -364,7 +364,7 @@ namespace CoopFood
             this.guna2ControlClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(152)))), ((int)(((byte)(166)))));
             this.guna2ControlClose.HoverState.FillColor = System.Drawing.Color.Red;
             this.guna2ControlClose.IconColor = System.Drawing.Color.White;
-            this.guna2ControlClose.Location = new System.Drawing.Point(1030, 0);
+            this.guna2ControlClose.Location = new System.Drawing.Point(1403, 0);
             this.guna2ControlClose.Name = "guna2ControlClose";
             this.guna2ControlClose.Size = new System.Drawing.Size(68, 29);
             this.guna2ControlClose.TabIndex = 1;
@@ -381,7 +381,7 @@ namespace CoopFood
             this.Panel_Container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Panel_Container.Location = new System.Drawing.Point(229, 60);
             this.Panel_Container.Name = "Panel_Container";
-            this.Panel_Container.Size = new System.Drawing.Size(1098, 705);
+            this.Panel_Container.Size = new System.Drawing.Size(1471, 705);
             this.Panel_Container.TabIndex = 2;
             // 
             // fTrangChu
@@ -389,7 +389,7 @@ namespace CoopFood
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(1327, 765);
+            this.ClientSize = new System.Drawing.Size(1700, 765);
             this.Controls.Add(this.Panel_Container);
             this.Controls.Add(this.guna2Panel2_Top);
             this.Controls.Add(this.guna2Panel1);

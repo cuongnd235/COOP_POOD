@@ -435,7 +435,7 @@ namespace CoopFood
             this.guna2Panel1.Controls.Add(this.dtgvSanPham);
             this.guna2Panel1.Location = new System.Drawing.Point(416, 47);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(673, 409);
+            this.guna2Panel1.Size = new System.Drawing.Size(1042, 494);
             this.guna2Panel1.TabIndex = 25;
             // 
             // dtgvSanPham
@@ -466,7 +466,7 @@ namespace CoopFood
             this.dtgvSanPham.RowHeadersVisible = false;
             this.dtgvSanPham.RowHeadersWidth = 51;
             this.dtgvSanPham.RowTemplate.Height = 24;
-            this.dtgvSanPham.Size = new System.Drawing.Size(667, 403);
+            this.dtgvSanPham.Size = new System.Drawing.Size(1036, 488);
             this.dtgvSanPham.TabIndex = 0;
             this.dtgvSanPham.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dtgvSanPham.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -499,9 +499,9 @@ namespace CoopFood
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.LimeGreen;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(419, 462);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(419, 562);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(673, 231);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(1036, 131);
             this.guna2GroupBox2.TabIndex = 40;
             this.guna2GroupBox2.Text = "Tác vụ";
             // 
@@ -522,7 +522,7 @@ namespace CoopFood
             this.btnLuu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnLuu.ImageOffset = new System.Drawing.Point(0, -3);
             this.btnLuu.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnLuu.Location = new System.Drawing.Point(227, 116);
+            this.btnLuu.Location = new System.Drawing.Point(223, 70);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(207, 42);
             this.btnLuu.TabIndex = 11;
@@ -546,7 +546,7 @@ namespace CoopFood
             this.btnTao.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnTao.ImageOffset = new System.Drawing.Point(0, -3);
             this.btnTao.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnTao.Location = new System.Drawing.Point(12, 116);
+            this.btnTao.Location = new System.Drawing.Point(8, 70);
             this.btnTao.Name = "btnTao";
             this.btnTao.Size = new System.Drawing.Size(183, 42);
             this.btnTao.TabIndex = 10;
@@ -570,7 +570,7 @@ namespace CoopFood
             this.btnXoa.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnXoa.ImageOffset = new System.Drawing.Point(0, -3);
             this.btnXoa.ImageSize = new System.Drawing.Size(25, 25);
-            this.btnXoa.Location = new System.Drawing.Point(476, 116);
+            this.btnXoa.Location = new System.Drawing.Point(472, 70);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(191, 42);
             this.btnXoa.TabIndex = 12;
@@ -591,7 +591,7 @@ namespace CoopFood
             this.btnTimKiem.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnTimKiem.HoverState.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.Location = new System.Drawing.Point(1042, 6);
+            this.btnTimKiem.Location = new System.Drawing.Point(1389, 6);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btnTimKiem.Size = new System.Drawing.Size(48, 38);
@@ -611,7 +611,7 @@ namespace CoopFood
             this.txtTimKiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTimKiem.Location = new System.Drawing.Point(836, 9);
+            this.txtTimKiem.Location = new System.Drawing.Point(1183, 9);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.PlaceholderText = "Tìm kiếm";
@@ -625,7 +625,7 @@ namespace CoopFood
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1098, 705);
+            this.ClientSize = new System.Drawing.Size(1470, 705);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.txtTimKiem);
