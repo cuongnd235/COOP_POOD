@@ -168,6 +168,7 @@ namespace CoopFood
             // 
             // dtpNgayVaoLam
             // 
+            this.dtpNgayVaoLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgayVaoLam.Location = new System.Drawing.Point(160, 529);
             this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
             this.dtpNgayVaoLam.Size = new System.Drawing.Size(200, 34);
@@ -175,6 +176,7 @@ namespace CoopFood
             // 
             // dtpNgaySinh
             // 
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgaySinh.Location = new System.Drawing.Point(160, 387);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(200, 34);
