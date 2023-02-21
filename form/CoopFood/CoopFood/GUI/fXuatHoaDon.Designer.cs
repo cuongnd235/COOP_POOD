@@ -235,6 +235,7 @@ namespace CoopFood
             this.dtpNgayLap.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayLap.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayLap.Name = "dtpNgayLap";
+            this.dtpNgayLap.ShowUpDown = true;
             this.dtpNgayLap.Size = new System.Drawing.Size(209, 36);
             this.dtpNgayLap.TabIndex = 1;
             this.dtpNgayLap.Value = new System.DateTime(2022, 12, 2, 13, 47, 56, 758);

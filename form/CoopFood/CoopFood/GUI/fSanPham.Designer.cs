@@ -151,6 +151,7 @@ namespace CoopFood
             this.dtpHSD.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpHSD.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpHSD.Name = "dtpHSD";
+            this.dtpHSD.ShowUpDown = true;
             this.dtpHSD.Size = new System.Drawing.Size(209, 36);
             this.dtpHSD.TabIndex = 10;
             this.dtpHSD.Value = new System.DateTime(2022, 12, 2, 13, 49, 50, 385);
@@ -165,6 +166,7 @@ namespace CoopFood
             this.dtpNSX.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNSX.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNSX.Name = "dtpNSX";
+            this.dtpNSX.ShowUpDown = true;
             this.dtpNSX.Size = new System.Drawing.Size(209, 36);
             this.dtpNSX.TabIndex = 9;
             this.dtpNSX.Value = new System.DateTime(2022, 12, 2, 13, 49, 50, 385);
@@ -340,6 +342,7 @@ namespace CoopFood
             this.dtpNgayNhap.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpNgayNhap.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpNgayNhap.Name = "dtpNgayNhap";
+            this.dtpNgayNhap.ShowUpDown = true;
             this.dtpNgayNhap.Size = new System.Drawing.Size(209, 36);
             this.dtpNgayNhap.TabIndex = 11;
             this.dtpNgayNhap.Value = new System.DateTime(2022, 12, 2, 13, 49, 50, 385);
