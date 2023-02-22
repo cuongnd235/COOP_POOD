@@ -58,7 +58,7 @@ namespace CoopFood
             series1.Legend = "Legend1";
             series1.Name = "VND";
             this.chartDoanhthu.Series.Add(series1);
-            this.chartDoanhthu.Size = new System.Drawing.Size(572, 413);
+            this.chartDoanhthu.Size = new System.Drawing.Size(504, 413);
             this.chartDoanhthu.TabIndex = 0;
             this.chartDoanhthu.Text = "chart1";
             // 
@@ -68,13 +68,13 @@ namespace CoopFood
             this.chartLuongNhanVien.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             this.chartLuongNhanVien.Legends.Add(legend2);
-            this.chartLuongNhanVien.Location = new System.Drawing.Point(741, 194);
+            this.chartLuongNhanVien.Location = new System.Drawing.Point(642, 194);
             this.chartLuongNhanVien.Name = "chartLuongNhanVien";
             series2.ChartArea = "ChartArea1";
             series2.Legend = "Legend1";
             series2.Name = "VND";
             this.chartLuongNhanVien.Series.Add(series2);
-            this.chartLuongNhanVien.Size = new System.Drawing.Size(533, 413);
+            this.chartLuongNhanVien.Size = new System.Drawing.Size(495, 413);
             this.chartLuongNhanVien.TabIndex = 1;
             this.chartLuongNhanVien.Text = "chart2";
             // 
@@ -84,7 +84,7 @@ namespace CoopFood
             this.cbDieuKienLoc.Items.AddRange(new object[] {
             "Quý",
             "Năm"});
-            this.cbDieuKienLoc.Location = new System.Drawing.Point(999, 122);
+            this.cbDieuKienLoc.Location = new System.Drawing.Point(812, 122);
             this.cbDieuKienLoc.Name = "cbDieuKienLoc";
             this.cbDieuKienLoc.Size = new System.Drawing.Size(209, 24);
             this.cbDieuKienLoc.TabIndex = 34;
@@ -95,7 +95,7 @@ namespace CoopFood
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(489, 34);
+            this.label12.Location = new System.Drawing.Point(391, 30);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(291, 41);
             this.label12.TabIndex = 35;
@@ -106,7 +106,7 @@ namespace CoopFood
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(994, 86);
+            this.label1.Location = new System.Drawing.Point(807, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 25);
             this.label1.TabIndex = 36;
@@ -117,7 +117,7 @@ namespace CoopFood
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(182, 623);
+            this.label2.Location = new System.Drawing.Point(145, 623);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(235, 25);
             this.label2.TabIndex = 37;
@@ -128,7 +128,7 @@ namespace CoopFood
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(893, 623);
+            this.label3.Location = new System.Drawing.Point(736, 623);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(285, 25);
             this.label3.TabIndex = 38;
@@ -138,7 +138,7 @@ namespace CoopFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 705);
+            this.ClientSize = new System.Drawing.Size(1171, 705);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
