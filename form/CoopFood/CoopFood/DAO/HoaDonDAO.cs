@@ -52,7 +52,7 @@ namespace CoopFood.DAO
             string queryUpdateTichLuy = string.Format("UPDATE KHACHHANG SET TichLuy = {0} WHERE MaKH = {1}", (int)(hoaDon.SoLuongBan*hoaDon.GiaBan / 10000), hoaDon.MaKH);
             result = DataProvider.Instance.ExecuteNonQuery(queryUpdateTichLuy);
 
-            string queryUpdateSoLuongSP = string.Format("UPDATE SANPHAM SET SoLuong = SoLuong - {0}", hoaDon.SoLuongBan, hoaDon.MaSP);
+            string queryUpdateSoLuongSP = string.Format("UPDATE SANPHAM SET SoLuong = SoLuong - {0} where MaSP = '{1}'", hoaDon.SoLuongBan, hoaDon.MaSP);
             result = DataProvider.Instance.ExecuteNonQuery(queryUpdateSoLuongSP);
 
             return new Result()
