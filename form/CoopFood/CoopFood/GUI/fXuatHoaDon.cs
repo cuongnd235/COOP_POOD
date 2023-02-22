@@ -75,7 +75,7 @@ namespace CoopFood
 
                     MaSP = int.Parse(cbTenSanPham.SelectedValue.ToString()),
                     SoLuongBan = int.Parse(txtSoLuong.Text),
-                    GiaBan = decimal.Parse(txtGiaBan.Text),
+                    GiaBan = int.Parse(txtGiaBan.Text),
                 };
 
                 var sl = await HoaDonDAO.Instance.LaySoLuongSanPham(hoadon.MaSP.ToString());
