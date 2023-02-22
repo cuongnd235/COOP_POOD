@@ -19,9 +19,9 @@ namespace CoopFood.DTO
         public DateTime NSX { get; set; }
         public DateTime HSD { get; set; }
         public DateTime NgayNhap { get; set; }
-        public decimal GiaBan { get; set; }
-        public decimal GiaNhap { get; set; }
-        public decimal KhuyenMai { get; set; }
+        public int GiaBan { get; set; }
+        public int GiaNhap { get; set; }
+        public int KhuyenMai { get; set; }
         public int MaDVT { get; set; }
         public int MaLSP { get; set; }
         public int MaNCC { get; set; }
