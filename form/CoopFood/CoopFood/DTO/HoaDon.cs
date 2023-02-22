@@ -34,4 +34,9 @@ namespace CoopFood.DTO
         public DateTime NgayMua { get; set; }
         public decimal TongTien { get; set; }
     }
+
+    public class SoLuong
+    {
+        public int SL { get; set; }
+    }
 }

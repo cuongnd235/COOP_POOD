@@ -78,6 +78,13 @@ namespace CoopFood
                     GiaBan = decimal.Parse(txtGiaBan.Text),
                 };
 
+                var sl = await HoaDonDAO.Instance.LaySoLuongSanPham(hoadon.MaSP.ToString());
+                if (sl < hoadon.SoLuongBan)
+                {
+                    MessageBoxUtil.ShowMessageBox($"Số lượng trong kho của sản phẩm còn {sl}", MessageBoxType.Warning);
+                    return;
+                }    
+
                 if ((await HoaDonDAO.Instance.DanhSachHoaDon(null)).Find(x => x.MaHD == hoadon.MaHD) == null)
                     result = HoaDonDAO.Instance.ThemHoaDon(hoadon);
                 else

@@ -1,6 +1,7 @@
 ﻿using CoopFood.DTO;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CoopFood.DAO
@@ -28,6 +29,14 @@ namespace CoopFood.DAO
             sql = string.IsNullOrWhiteSpace(keySearch) ? string.Format(sql, String.Empty) : string.Format(sql, $" WHERE kh.TenKH like N'%{keySearch}%' or nv.TenNV like N'%{keySearch}%' or hd.MaHD like '%{keySearch}%'");
 
             return await DataProvider.Instance.SqlQueryAsync<HoaDon>(sql);
+        }
+
+        public async Task<int> LaySoLuongSanPham(string maSP)
+        {
+            string query1 = $"select SoLuong AS SL from SANPHAM where MaSP = '{maSP}'";
+            var res = await DataProvider.Instance.SqlQueryAsync<SoLuong>(query1);
+
+            return res.FirstOrDefault().SL;
         }
 
         public Result ThemHoaDon(HoaDon hoaDon)
